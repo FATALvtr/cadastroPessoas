@@ -32,6 +32,7 @@ public class Pessoa {
         this.idade = idade;
     }
 
+    // formatação do CPF (000.000.000-00)
     public String getCPF(String a) {
 
         if (a == null || a.length() != 11) {
@@ -40,7 +41,6 @@ public class Pessoa {
 
         return a.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})",
                 "$1.$2.$3-$4");
-
     }
 
     public void setCPF(String CPF) {
