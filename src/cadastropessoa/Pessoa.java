@@ -5,6 +5,14 @@ public class Pessoa {
     String nome;
     int idade;
     String cpf;
+    
+    
+    
+    public void imprimir (){
+        System.out.println("Nome: "+getNome());
+        System.out.println("Idade: "+getIdade());
+        System.out.println("CPF: "+getCPF(cpf));
+    }
 
     public Pessoa(String nome, int idade, String CPF) {
         this.nome = nome;
@@ -35,10 +43,12 @@ public class Pessoa {
     // formatação do CPF (000.000.000-00)
     public String getCPF(String a) {
 
+        // se o cpf for null ou não tiver 11 caracteres, ele não formata.
         if (a == null || a.length() != 11) {
             return cpf;
         }
-
+        
+        // se tiver ele formata.
         return a.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})",
                 "$1.$2.$3-$4");
     }
