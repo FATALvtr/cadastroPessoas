@@ -6,12 +6,10 @@ public class Pessoa {
     int idade;
     String cpf;
     
-    
-    
     public void imprimir (){
-        System.out.println("Nome: "+getNome());
-        System.out.println("Idade: "+getIdade());
-        System.out.println("CPF: "+getCPF(cpf));
+        System.out.println("Nome: " + getNome());
+        System.out.println("Idade: " + getIdade());
+        System.out.println("CPF: " + getCPF(cpf));
     }
 
     public Pessoa(String nome, int idade, String CPF) {
@@ -37,7 +35,12 @@ public class Pessoa {
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
+        if (idade > 0){
+            this.idade = idade;            
+        }else
+            System.out.println("Figite uma idade maior que 0!");
+        
+        
     }
 
     // formatação do CPF (000.000.000-00)
