@@ -13,7 +13,8 @@ public class main {
         
         ArrayList lista = new ArrayList();
         
-        c.menu();
+        c.menu(pessoa1);
+        
     }
 
 }

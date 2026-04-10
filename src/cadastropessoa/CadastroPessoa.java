@@ -24,24 +24,26 @@ public class CadastroPessoa {
             
             cadastrar.imprimir();
                     
-            System.out.println("\nDigite 1 para sair / d1igite 0 para fazer novo cadastro!");
+            System.out.println("\nDigite 1 para fazer novo cadastro / Digite 0 para voltar ao menu!");
             decisao = s.nextInt();
                 
-        } while (decisao != 1);
+        } while (decisao != 0);
+        
+        
     }
-    public void listarPessoas(){
+    public void listarPessoas(Pessoa pessoa1){
+        
         ArrayList <Pessoa> lista = new ArrayList();
         
-        System.out.print("Digite o nome que deseja consultar: ");
-        
-        
+        lista.add(pessoa1);
         
     }
-    public void menu(){
+    public void menu(Pessoa pessoa1){
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("1 - cadastrar");
-        System.out.println("2- listar pessoas");
+        System.out.print("1 - cadastrar");
+        System.out.print("\n2- listar pessoas");
+        System.out.print("\n3- Sair\n");
         int escolha = scanner.nextInt();
         
         switch (escolha) {
@@ -49,7 +51,10 @@ public class CadastroPessoa {
                 cadastrarPessoas();
                 break;
             case 2: 
-                listarPessoas();
+                listarPessoas(pessoa1);
+                break;
+            case 3: 
+                System.out.println("Obrigado por usar o serviço!");
                 break;
             default:
                 System.out.print("Escolha uma opção valida!");
