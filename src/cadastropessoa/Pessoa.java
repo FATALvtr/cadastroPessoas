@@ -5,8 +5,8 @@ public class Pessoa {
     String nome;
     int idade;
     String cpf;
-    
-    public void imprimir (){
+
+    public void imprimir() {
         System.out.println("Nome: " + getNome());
         System.out.println("Idade: " + getIdade());
         System.out.println("CPF: " + getCPF(cpf));
@@ -35,12 +35,12 @@ public class Pessoa {
     }
 
     public void setIdade(int idade) {
-        if (idade > 0){
-            this.idade = idade;            
-        }else
+        if (idade > 0) {
+            this.idade = idade;
+        } else {
             System.out.println("\nDigite uma idade maior que 0!");
-        
-        
+        }
+
     }
 
     // formatação do CPF (000.000.000-00)
@@ -50,14 +50,21 @@ public class Pessoa {
         if (a == null || a.length() != 11) {
             return cpf;
         }
-        
+
         // se tiver ele formata.
         return a.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})",
                 "$1.$2.$3-$4");
     }
 
     public void setCPF(String CPF) {
+
+        if (CPF == null || CPF.length() != 11) {
+            System.out.println("Erro: CPF deve conter exatamente 11 caracteres.");
+            return; // não seta o cpf
+        }
         this.cpf = CPF;
     }
+
+}
 
 }
