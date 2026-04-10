@@ -21,7 +21,7 @@ public class CadastroPessoa {
 
         System.out.print("\nDigite a idade: ");
         nova.setIdade(s.nextInt());
-        s.nextLine();
+        s.nextLine(); //Pulo do gato
 
         lista.add(nova);
 
@@ -29,7 +29,6 @@ public class CadastroPessoa {
     }
 
     public void listarPessoas() {
-
         if (lista.isEmpty()) {
             System.out.println("\nLista vazia!");
         } else {
