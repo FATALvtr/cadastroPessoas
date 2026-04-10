@@ -20,14 +20,14 @@ public class CadastroPessoa {
         nova.setCPF(s.next());
 
         do {
-        System.out.print("\nDigite a idade: ");
-        nova.setIdade(s.nextInt());
-        s.nextLine(); //Pulo do gato
-        
-    }while(nova.getIdade() <= 0);
-        
-    lista.add(nova);
-    
+            System.out.print("\nDigite a idade: ");
+            nova.setIdade(s.nextInt());
+            s.nextLine(); //Pulo do gato
+
+        } while (nova.getIdade() <= 0);
+
+        lista.add(nova);
+
     }
 
     public void listarPessoas() {
@@ -37,7 +37,7 @@ public class CadastroPessoa {
             System.out.println("\n"+lista.size()+" Pessoas Cadastradas: ");
             for (Pessoa p : lista) {
                 System.out.println("");
-                p.imprimir();
+                //p.imprimir();
             }
         }
     }
@@ -55,8 +55,11 @@ public class CadastroPessoa {
             op = s.nextInt();
             s.nextLine();
 
-            if (op == 1) cadastrarPessoas();
-            else if (op == 2) listarPessoas();
+            if (op == 1) {
+                cadastrarPessoas();
+            } else if (op == 2) {
+                listarPessoas();
+            }
 
         } while (op != 0);
     }
