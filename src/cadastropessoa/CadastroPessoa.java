@@ -19,13 +19,15 @@ public class CadastroPessoa {
         System.out.print("\nDigite o CPF: ");
         nova.setCPF(s.next());
 
+        do {
         System.out.print("\nDigite a idade: ");
         nova.setIdade(s.nextInt());
         s.nextLine(); //Pulo do gato
-
-        lista.add(nova);
-
-        System.out.println("\n" + nova.getNome() + " cadastrado com sucesso!");
+        
+    }while(nova.getIdade() <= 0);
+        
+    lista.add(nova);
+    
     }
 
     public void listarPessoas() {

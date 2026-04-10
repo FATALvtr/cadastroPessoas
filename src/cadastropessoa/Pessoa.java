@@ -35,7 +35,12 @@ public class Pessoa {
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
+        if (idade > 0){
+            this.idade = idade;            
+        }else
+            System.out.println("\nDigite uma idade maior que 0!");
+        
+        
     }
 
     // formatação do CPF (000.000.000-00)
