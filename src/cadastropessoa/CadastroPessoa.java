@@ -34,6 +34,7 @@ public class CadastroPessoa {
         if (lista.isEmpty()) {
             System.out.println("\nLista vazia!");
         } else {
+            System.out.println("\n"+lista.size()+" Pessoas Cadastradas: ");
             for (Pessoa p : lista) {
                 System.out.println("");
                 p.imprimir();
