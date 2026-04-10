@@ -7,11 +7,11 @@ public class Pessoa {
     String cpf;
     
     public void imprimir (){
-        System.out.println("----------------------------");
+        System.out.println("------------------------------------");
         System.out.println("Nome: " + getNome());
         System.out.println("Idade: " + getIdade());
         System.out.println("CPF: " + getCPF(cpf));
-        System.out.println("----------------------------");
+        System.out.println("------------------------------------");
     }
 
     public Pessoa(String nome, int idade, String CPF) {
