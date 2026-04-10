@@ -6,12 +6,10 @@ public class Pessoa {
     int idade;
     String cpf;
     
-    
-    
     public void imprimir (){
-        System.out.println("Nome: "+getNome());
-        System.out.println("Idade: "+getIdade());
-        System.out.println("CPF: "+getCPF(cpf));
+        System.out.println("Nome: " + getNome());
+        System.out.println("Idade: " + getIdade());
+        System.out.println("CPF: " + getCPF(cpf));
     }
 
     public Pessoa(String nome, int idade, String CPF) {

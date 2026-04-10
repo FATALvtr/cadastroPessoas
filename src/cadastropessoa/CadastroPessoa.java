@@ -1,35 +1,18 @@
-
 package cadastropessoa;
-import java.util.Scanner;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CadastroPessoa {
-    ArrayList <Pessoa> lista = new ArrayList();
-    
-    public void menu(){
-        Scanner scanner = new Scanner(System.in);
-        int escolha = 0;
-        //Faça-enquanto.
-        do {            
-            System.out.print("\n1 - Cadastrar \n2 - Listar Pessoas\n0 - Sair");
-            System.out.print("\nEscolha: ");
-            escolha = scanner.nextInt();
-//OPÇÕES - switch case com -> / pra ficar mais simples
-            switch (escolha) {
-                case 1-> cadastrarPessoas();
-                case 2-> listarPessoas(); 
-                case 0-> System.out.println("Obrigado por usar o serviço!"); 
-                default-> System.out.print("Opção: "+escolha+" não é valida!");
-            }
-        }while (escolha != 0);
-    }
-    public void cadastrarPessoas(){
-        
+
+    ArrayList<Pessoa> lista = new ArrayList<>();
+
+    public void cadastrarPessoas() {
+
         Scanner s = new Scanner(System.in);
-        
+
         Pessoa nova = new Pessoa();
-        
+
         System.out.print("\nDigite o nome: ");
         nova.setNome(s.nextLine());
 
@@ -38,25 +21,41 @@ public class CadastroPessoa {
 
         System.out.print("\nDigite a idade: ");
         nova.setIdade(s.nextInt());
-        s.nextLine(); //serve para tirar o (limpeza de buffer/pulo do gato)
-                
-        lista.add(nova);//função adiciona novo objeto a lista
-        
-        System.out.println("\n"+nova.getNome()+" Cadastrado com sucesso!");
-        
-        //nova.imprimir();
+        s.nextLine();
+
+        lista.add(nova);
+
+        System.out.println("\n" + nova.getNome() + " cadastrado com sucesso!");
     }
-    public void listarPessoas(){
-        if(lista.isEmpty()){//função indentifica vazio
+
+    public void listarPessoas() {
+
+        if (lista.isEmpty()) {
             System.out.println("\nLista vazia!");
-        }else{
-            for (Pessoa p : lista){
+        } else {
+            for (Pessoa p : lista) {
                 System.out.println("");
                 p.imprimir();
             }
         }
     }
 
+    public void menu() {
+
+        Scanner s = new Scanner(System.in);
+        int op;
+
+        do {
+            System.out.println("\n1 - Cadastrar");
+            System.out.println("2 - Listar");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha: ");
+            op = s.nextInt();
+            s.nextLine();
+
+            if (op == 1) cadastrarPessoas();
+            else if (op == 2) listarPessoas();
+
+        } while (op != 0);
+    }
 }
-
-
