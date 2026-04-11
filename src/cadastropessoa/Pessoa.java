@@ -41,7 +41,7 @@ public class Pessoa {
         if (idade > 0 && idade <100) {
             this.idade = idade;
         } else {
-            System.out.println("\nDigite uma idade maior que 0!");
+            System.out.println("\nDigite uma idade maior que 0 e menor que 100!");
         }
 
     }

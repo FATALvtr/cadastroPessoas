@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class CadastroPessoa {
 
     ArrayList<Pessoa> lista = new ArrayList<>();
-
+    Scanner s = new Scanner(System.in);
+    
     public void cadastrarPessoas() {
 
         Scanner s = new Scanner(System.in);
@@ -45,16 +46,41 @@ public class CadastroPessoa {
             System.out.println("\nLista vazia!");
         } else {
             System.out.println("\n"+lista.size()+" Pessoas Cadastradas: ");
-            for (Pessoa p : lista) {
-                System.out.println("");
-                p.imprimir();
+            System.out.print("\n1- Litar todos");
+            System.out.print("\n2- Buscar na lista");
+            System.out.print("\nescolha uma opção: ");
+            int opção = s.nextInt();
+            if(opção == 1){
+                for (Pessoa p : lista) {
+                    System.out.println("");
+                    p.imprimir();
+                }
+            }else if(opção == 2){
+                System.out.println("\nDigite o nome que deseja consultar: ");
+                s.nextLine();//pulao do gato
+                String buscar = s.nextLine();
+                
+                boolean encontrado = false;
+                
+                for(Pessoa p : lista) {
+                    if(p.nome.equalsIgnoreCase(buscar)){
+                        System.out.println("Usuario encontrado!");
+                        p.imprimir();
+                        
+                        encontrado = true;
+                    break;
+                    }
+                }if(!encontrado){
+                    System.out.println("Usuario não encontrado!");
+                }
+                
             }
         }
     }
 
     public void menu() {
 
-        Scanner s = new Scanner(System.in);
+        
         int op;
 
         do {
