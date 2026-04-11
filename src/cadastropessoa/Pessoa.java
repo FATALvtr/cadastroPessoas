@@ -38,7 +38,7 @@ public class Pessoa {
     }
 
     public void setIdade(int idade) {
-        if (idade > 0) {
+        if (idade > 0 && idade <100) {
             this.idade = idade;
         } else {
             System.out.println("\nDigite uma idade maior que 0!");
