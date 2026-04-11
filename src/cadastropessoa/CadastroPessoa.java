@@ -12,12 +12,22 @@ public class CadastroPessoa {
         Scanner s = new Scanner(System.in);
 
         Pessoa nova = new Pessoa();
+        String cpf;
 
         System.out.print("\nDigite o nome: ");
         nova.setNome(s.nextLine());
 
-        System.out.print("\nDigite o CPF: ");
-        nova.setCPF(s.next());
+        do {
+            System.out.print("\nDigite o CPF: ");
+            cpf = s.next();
+
+            if (cpf.length() != 11) {
+                System.out.println("CPF inválido! Digite exatamente 11 dígitos.");
+            }
+
+        } while (cpf.length() != 11);
+
+        nova.setCPF(cpf);
 
         do {
             System.out.print("\nDigite a idade: ");
@@ -37,7 +47,7 @@ public class CadastroPessoa {
             System.out.println("\n"+lista.size()+" Pessoas Cadastradas: ");
             for (Pessoa p : lista) {
                 System.out.println("");
-                //p.imprimir();
+                p.imprimir();
             }
         }
     }

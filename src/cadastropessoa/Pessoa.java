@@ -60,15 +60,7 @@ public class Pessoa {
     }
 
     public void setCPF(String CPF) {
-
-        if (CPF == null || CPF.length() != 11) {
-            System.out.println("Erro: CPF deve conter exatamente 11 caracteres.");
-            return; // não seta o cpf
-        }
         this.cpf = CPF;
     }
 
 }
-
-
-
