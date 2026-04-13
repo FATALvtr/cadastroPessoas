@@ -10,8 +10,6 @@ public class CadastroPessoa {
     
     public void cadastrarPessoas() {
 
-
-
         Pessoa nova = new Pessoa();
         String cpf;
 

@@ -49,7 +49,7 @@ public class Pessoa {
     // formatação do CPF (000.000.000-00)
     public String getCPF(String a) {
 
-        // se o cpf for null ou não tiver 11 caracteres, ele não formata.
+        // se o cpf for null ou tiver 11 caracteres, ele formata.
         if (a == null || a.length() != 11) {
             return cpf;
         }
