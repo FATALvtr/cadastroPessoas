@@ -10,7 +10,7 @@ public class CadastroPessoa {
     
     public void cadastrarPessoas() {
 
-        Scanner s = new Scanner(System.in);
+
 
         Pessoa nova = new Pessoa();
         String cpf;
